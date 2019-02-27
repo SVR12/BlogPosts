@@ -3,15 +3,15 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Blog from './containers/Blog/Blog';
 
+// use basename="/" while serving on localhost
+const basename = "/learningReact-BlogPosts";
+// const basename = "/";
+
 class App extends Component {
   render() {
     return (
-      // basename is ="/" by default
-      // <BrowserRouter>
-      <BrowserRouter basename="learningReact-BlogPosts">
-        <div className="App">
-          <Blog />
-        </div>
+      <BrowserRouter basename={basename}>
+        <Blog basename={basename} />
       </BrowserRouter>
     );
   }
