@@ -7,8 +7,8 @@ class App extends Component {
   render() {
     return (
       // basename is ="/" by default
-      // <BrowserRouter basename="/my-app">
-      <BrowserRouter>
+      // <BrowserRouter>
+      <BrowserRouter basename="learningReact-BlogPosts">
         <div className="App">
           <Blog />
         </div>

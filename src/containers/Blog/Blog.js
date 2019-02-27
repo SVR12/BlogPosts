@@ -23,9 +23,7 @@ class Blog extends Component {
           <nav>
             <ul>
               <li><NavLink
-                // use first for serving on localhost
-                // to="/posts"
-                to="learningReact-BlogPosts/posts"
+                to="/posts"
                 exact
                 activeClassName="my-active"
                 activeStyle={{
@@ -33,9 +31,7 @@ class Blog extends Component {
                   textDecoration: 'underline'
                 }}>Posts</NavLink></li>
               <li><NavLink to={{
-                // use first for serving on localhost
-                // pathname: '/new-post',
-                pathname: 'learningReact-BlogPosts/new-post',
+                pathname: '/new-post',
                 hash: '#submit',
                 search: '?quick-submit=true'
               }}>New Post</NavLink></li>
@@ -43,9 +39,7 @@ class Blog extends Component {
           </nav>
         </header>
 
-        {/* use first for serving on localhost */}
-        {/* <Switch basename=""> */}
-        <Switch basename="learningReact-BlogPosts">
+        <Switch>
 
           {this.state.auth ? <Route path="/new-post" component={AsyncNewPost} /> : null}
           <Route path="/posts" component={Posts} />
