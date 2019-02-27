@@ -17,13 +17,15 @@ class Blog extends Component {
 
   render() {
 
+    const { basename } = this.props;
+
     return (
       <div className="Blog">
         <header>
           <nav>
             <ul>
               <li><NavLink
-                to="/posts"
+                to={`${basename}/posts`}
                 exact
                 activeClassName="my-active"
                 activeStyle={{
@@ -31,7 +33,7 @@ class Blog extends Component {
                   textDecoration: 'underline'
                 }}>Posts</NavLink></li>
               <li><NavLink to={{
-                pathname: '/new-post',
+                pathname: `${basename}/new-post`,
                 hash: '#submit',
                 search: '?quick-submit=true'
               }}>New Post</NavLink></li>
@@ -41,8 +43,8 @@ class Blog extends Component {
 
         <Switch>
 
-          {this.state.auth ? <Route path="/new-post" component={AsyncNewPost} /> : null}
-          <Route path="/posts" component={Posts} />
+          {this.state.auth ? <Route path={`${basename}/new-post`} component={AsyncNewPost} /> : null}
+          <Route path={`${basename}/posts`} component={Posts} />
           <Route render={() => <h1>404 Not Found!</h1>} />
           {/* <Redirect from="/" to="/posts" /> */}
           {/* <Route path="/" component={Posts} /> */}

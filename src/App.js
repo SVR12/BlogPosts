@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter basename={basename}>
-        <Blog />
+        <Blog basename={basename} />
       </BrowserRouter>
     );
   }
